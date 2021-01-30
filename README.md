@@ -1,5 +1,7 @@
 # quiz
 
+- Simple quiz app using Open Trivia DB API
+
 ## Project setup
 ```
 npm install
