@@ -2,6 +2,10 @@
 
 - Simple quiz app using Open Trivia DB API (https://opentdb.com/)
 
+## App version
+### Versión 1
+- Simple quiz with basic features
+
 ## Project setup
 ```
 npm install
