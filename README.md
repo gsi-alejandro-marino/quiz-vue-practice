@@ -1,6 +1,6 @@
 # quiz
 
-- Simple quiz app using Open Trivia DB API
+- Simple quiz app using Open Trivia DB API (https://opentdb.com/)
 
 ## Project setup
 ```
