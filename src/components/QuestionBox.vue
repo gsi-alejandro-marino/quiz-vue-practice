@@ -26,8 +26,8 @@
       <b-button
         @click="next"
         variant="success"
-        href="#"
-      >Next</b-button>
+        :disabled="selectedIndex === null || !answered"
+      > {{ isLastQuestion ? 'Finish' : 'Next'}}</b-button>
     </b-jumbotron>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
   props: {
     currentQuestion: Object,
     next: Function,
-    increment: Function
+    increment: Function,
+    isLastQuestion: Boolean
   },
   data () {
     return {
