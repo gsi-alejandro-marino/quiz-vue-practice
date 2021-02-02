@@ -28,3 +28,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+[X] Pedir nombre  
+[X] Categoria de pregunta  
+[ ] 20 pregunta  
+[X] Al terminar 'Felicitaciones al usuario'  
+[ ] Agregar al ranking de jugadores que han terminado, y poner tiempos que tomó
