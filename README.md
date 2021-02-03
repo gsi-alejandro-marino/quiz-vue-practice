@@ -6,6 +6,9 @@
 ### Versión 1
 - Simple quiz with basic features
 
+### Versión 2
+- Add new features
+
 ## Project setup
 ```
 npm install
@@ -33,4 +36,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 [X] Categoria de pregunta  
 [ ] 20 pregunta  
 [X] Al terminar 'Felicitaciones al usuario'  
-[ ] Agregar al ranking de jugadores que han terminado, y poner tiempos que tomó
+[X] Agregar al ranking de jugadores que han terminado, y poner tiempos que tomó
