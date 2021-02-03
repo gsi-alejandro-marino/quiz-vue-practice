@@ -63,6 +63,7 @@ export default {
       if (this.index === 4) {
         this.showBox = false
         this.stop()
+        this.sendScore()
       }
     },
     increment (isCorrect) {
@@ -88,6 +89,25 @@ export default {
     },
     reset () {
       this.elapsedTime = 0;
+    },
+    sendScore () {
+      const data = {
+        "username": this.nameAlias,
+        "score": this.numCorrect,
+        "time": this.timer
+      }
+      fetch('https://sleepy-wildwood-42061.herokuapp.com/score', {
+        method: 'post',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(data)
+      })
+        .then((response) => {
+          return response.json()
+        })
     }
   },
   computed: {
@@ -104,7 +124,6 @@ export default {
   },
   mounted: function () {
     if (this.categoryId !== 0) {
-      //https://opentdb.com/api.php?amount=10&category=15
       fetch('https://opentdb.com/api.php?amount=20&category=' + this.categoryId, {
         method: 'get'
       })
