@@ -5,6 +5,14 @@
       hover
       :items="scores"
     ></b-table>
+    <b-row>
+      <b-col
+        sm="6"
+        offset="3"
+      >
+        <router-link to="/">Try again</router-link>
+      </b-col>
+    </b-row>
   </div>
 </template>
 <script>
@@ -16,8 +24,8 @@ export default {
     }
   },
   mounted: function () {
-
-    fetch('https://sleepy-wildwood-42061.herokuapp.com/score', {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch(proxyurl + 'https://sleepy-wildwood-42061.herokuapp.com/score', {
       method: 'get'
     })
       .then((response) => {

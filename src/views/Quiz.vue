@@ -91,23 +91,22 @@ export default {
       this.elapsedTime = 0;
     },
     sendScore () {
-      const data = {
-        "username": this.nameAlias,
-        "score": this.numCorrect,
-        "time": this.timer
-      }
-      fetch('https://sleepy-wildwood-42061.herokuapp.com/score', {
-        method: 'post',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify(data)
-      })
-        .then((response) => {
-          return response.json()
-        })
+      const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+
+      const data = JSON.stringify({ "username": this.nameAlias, "score": this.numCorrect, "time": this.timer });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: headers,
+        body: data,
+        redirect: 'follow'
+      };
+      fetch(proxyurl + "https://sleepy-wildwood-42061.herokuapp.com/score", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
     }
   },
   computed: {
